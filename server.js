@@ -65,6 +65,7 @@ async function startServer() {
     try {
         await mongoose.connect('mongodb+srv://admin:qwe123@cluster0-5avib.mongodb.net/comments', {
             useNewUrlParser: true,
+            useUnifiedTopology: true,
             useFindAndModify: false
         })
         fastify.listen(PORT, (err, addr) => {
