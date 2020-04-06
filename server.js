@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const fastify = require('fastify')();
 const jwt = require('fastify-jwt');
-const Comment = require('/models/comment');
-const User = require('/models/User');
+const Comment = require('./models/Comment');
+const User = require('./models/User');
 
 const PORT = process.env.port || 3000;
 
