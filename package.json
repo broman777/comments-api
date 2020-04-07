@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server",
     "build": "node server",
+    "start": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ruslan Bratenko",
@@ -17,5 +17,5 @@
     "fastify-jwt": "^1.3.1",
     "mongoose": "^5.9.7",
     "nodemon": "^2.0.2"
-  
+  }
 }
