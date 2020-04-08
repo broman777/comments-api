@@ -4,8 +4,6 @@ const jwt = require('fastify-jwt');
 const Comment = require('./models/Comment');
 const User = require('./models/User');
 
-const PORT = process.env.port || 3000;
-
 fastify
     .register(require('fastify-cors'))
     .register(jwt, { secret: 'bratenko' })
@@ -89,12 +87,12 @@ async function startServer() {
             useUnifiedTopology: true,
             useFindAndModify: false
         })
-        fastify.listen(PORT, '0.0.0.0', (err, addr) => {
+        fastify.listen((process.env.PORT || 5000), (err, addr) => {
             if (err) {
                 console.error(err);
                 process.exit(1);
             } else {
-                console.log(`Server has been started on port ${PORT}`);
+                console.log(`Server has been started on port ${process.env.PORT}`);
                 console.log(`Comments api launched succesful!`);
             }
         });
