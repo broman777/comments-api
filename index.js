@@ -70,10 +70,11 @@ async function startServer() {
         })
         fastify.listen(PORT, (err, addr) => {
             if (err) {
-                console.log(err);
+                console.error(err);
                 process.exit(1);
             } else {
                 console.log(`Server has been started on port ${PORT}`);
+                console.log(`Comments api launched succesful!`);
             }
         });
     } catch (e) {
