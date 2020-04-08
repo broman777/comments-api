@@ -89,7 +89,7 @@ async function startServer() {
             useUnifiedTopology: true,
             useFindAndModify: false
         })
-        fastify.listen(PORT, (err, addr) => {
+        fastify.listen(PORT, '0.0.0.0', (err, addr) => {
             if (err) {
                 console.error(err);
                 process.exit(1);
