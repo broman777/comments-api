@@ -7,7 +7,6 @@ const User = require('./models/User');
 const PORT = process.env.port || 3000;
 
 fastify
-    .register(require('fastify-cors'))
     .register(jwt, { secret: 'bratenko' })
     .get('/comments', async (req, reply) => {
         const comments = await Comment.find({})
