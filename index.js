@@ -4,7 +4,7 @@ const jwt = require('fastify-jwt');
 const Comment = require('./models/Comment');
 const User = require('./models/User');
 
-const PORT = process.env.port || 80;
+const PORT = process.env.port || 3000;
 
 fastify
     .register(require('fastify-cors'))
