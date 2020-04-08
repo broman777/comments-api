@@ -2,10 +2,10 @@
   "name": "comments-api",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server -p $PORT",
-    "dev": "nodemon server",
+    "start": "node index",
+    "dev": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ruslan Bratenko",
