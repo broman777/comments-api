@@ -13,6 +13,27 @@ fastify
         const comments = await Comment.find({})
         reply.send({ comments })
     })
+    .route({
+        method: 'GET',
+        url: '/',
+        schema: {
+          querystring: {
+            name: { type: 'string' },
+            excitement: { type: 'integer' }
+          },
+          response: {
+            200: {
+              type: 'object',
+              properties: {
+                hello: { type: 'string' }
+              }
+            }
+          }
+        },
+        handler: function (request, reply) {
+          reply.send( "Comments api" )
+        }
+      })
     .post('/write', async (req, reply) => {
         const token = fastify.jwt.sign({ user: req.body.username })
         const comment = new Comment({
