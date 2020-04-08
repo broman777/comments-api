@@ -81,24 +81,15 @@ fastify
         }
     })
 
-async function startServer() {
-    try {
-        await mongoose.connect('mongodb+srv://admin:qwe123@cluster0-5avib.mongodb.net/comments', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useFindAndModify: false
-        })
-        fastify.listen(PORT, (err, addr) => {
-            if (err) {
-                console.error(err);
-            } else {
-                console.log(`Server has been started on port ${PORT}`);
-                console.log(`Comments api launched succesful!`);
-            }
-        });
-    } catch (e) {
-        console.log(e)
-    }
+function startServer() {
+    fastify.listen(PORT, (err, addr) => {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log(`Server has been started on port ${PORT}`);
+            console.log(`Comments api launched succesful!`);
+        }
+    });
 }
 
 startServer()
